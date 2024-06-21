@@ -26,11 +26,13 @@ Instituto Desarrollo (undergraduate)
 #### Mathematics for Economists
 Research Workshop (undergraduate)
 
-#### Intermediate Microeconomics
+#### Calculus I–III
 Columbia University (undergraduate)
 
 #### Intermediate Macroeconomics
 Columbia University (undergraduate)
 
-#### Calculus I–III
+#### Intermediate Microeconomics
 Columbia University (undergraduate)
+
+
