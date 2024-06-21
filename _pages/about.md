@@ -11,4 +11,4 @@ I am a PhD Candidate in Agricultural and Resource Economics at UC Davis. My fiel
 
 You can find my CV [here](https://www.dropbox.com/scl/fi/bhgfntbd7ywmhevn2y67f/Sugastti_CV_0624.pdf?rlkey=myhbgqwyeacrdjchhorimlm4g&st=o0jtjxlw&dl=0).
 
-Before entering my doctoral program, I graduated from Columbia University with a BA in Economics-Mathematics and a Concentration in Latin American and Caribbean Studies. I have worked as a Policy Analyst at the Paraguayan Secretariat of Planning for Economic and Social Development and as a Research Associate at Instituto Desarrollo. I am also a long-time collaborator of OMAPA, the Paraguayan mathematical olympiads organization.
+Before entering my doctoral program, I graduated from Columbia University with a BA in Economics-Mathematics and a Concentration in Latin American and Caribbean Studies. I have worked in Asunción as a Policy Analyst at the Secretariat of Planning for Economic and Social Development and as a Research Associate at Instituto Desarrollo. I am also a long-time collaborator of OMAPA, the Paraguayan mathematical olympiads organization.
