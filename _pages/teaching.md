@@ -5,34 +5,20 @@ permalink: /teaching/
 author_profile: true
 ---
 
-### Microeconomic Analysis
-UC Davis (graduate)
+### At UC Davis
+Applied Economics Research Workshop (undergraduate)
+Econometrics (undergraduate)
+Intermediate Microeconomics (undergraduate)
+Microeconomic Analysis (graduate)
 
-### Applied Economics Research Workshop
-UC Davis (undergraduate)
-
-### Econometrics
-UC Davis (undergraduate)
-
-### Intermediate Microeconomics
-UC Davis (undergraduate)
-
-### Mathematics for Economists
-Instituto Desarrollo (graduate)
-
-### Computational Methods
-Instituto Desarrollo (undergraduate)
-
-### Mathematics for Economists
+### At Instituto Desarrollo 
+Mathematics for Economists (graduate)
+Computational Methods (undergraduate)
 Research Workshop (undergraduate)
 
-### Calculus I–III
-Columbia University (undergraduate)
-
-### Intermediate Macroeconomics
-Columbia University (undergraduate)
-
-### Intermediate Microeconomics
-Columbia University (undergraduate)
+### At Columbia University
+Calculus I–III (undergraduate)
+Intermediate Macroeconomics (undergraduate)
+Intermediate Microeconomics (undergraduate)
 
 
