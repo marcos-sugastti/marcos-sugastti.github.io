@@ -5,7 +5,7 @@ permalink: /research/
 author_profile: true
 ---
 
-# Works in Progress
+## Works in Progress
 
 ### The Impact of Natural Disasters on Risk Preferences, Subjective Beliefs, and Related Behavior: Evidence from Typhoon Ketsana (with Sean F. Kiely) [Working Paper | Slides]
 
@@ -39,7 +39,7 @@ The increased frequency and severity of natural disasters has spawned the emerge
 In Latin America and the Caribbean (LAC), the poorest and most vulnerable households largely engage in informal work/self-employment and are beyond the reach of conventional income maintenance programs that provide shock-responsive social protection for the formally employed. While the poorest households sometimes benefit from conditional cash transfers and economic inclusion asset building programs, making these programs shock-responsive requires recognizing these households as active economic actors who need to build and protect the assets that are key to their livelihood and resilience. Although there has been some progress toward making cash transfer schemes shock-responsive, we argue that effective social protection for this population must extend beyond scalable cash payments and offer customizable asset protection schemes tailored to individual asset exposure. The payoffs to such schemes could be substantial in terms of improved asset accumulation incentives and long-term poverty reduction and resilience. These schemes could leverage parametric disaster risk financing instruments of the sort already present in the region to provide predictable, reliable, and customizable support to the target population. In addition to our core argument concerning the protection of the poorest in LAC, we also consider the role of parametric or index insurance products in underwriting scalable social protection obligations of governments. Our analysis suggests a cautionary perspective on the conventional logic about the important role that parametric insurance products can play as a form of stochastic government support. We show that the degree of reliance on these products depends critically on the reliability of the underlying parametric index. This point is especially important given our emphasis on the necessity of reliable social protection programs that enhance and sustain asset building and protection for the poorest.
 </details>
 
-# Blog Coverage
+## Blog Coverage
 
 "How Earth Observations Can Help Governments Protect Vulnerable Families from Disaster Risk." BASIS Feed the Future Innovation Lab for Markets, Risk and Resilience at UC Davis. [[Link](https://basis.ucdavis.edu/news/how-earth-observations-can-help-governments-protect-vulnerable-families-disaster-risk)]
 
