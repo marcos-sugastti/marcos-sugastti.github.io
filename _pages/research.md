@@ -41,5 +41,5 @@ In Latin America and the Caribbean (LAC), the poorest and most vulnerable househ
 
 # Blog Coverage
 
-### "How Earth Observations Can Help Governments Protect Vulnerable Families from Disaster Risk." BASIS Feed the Future Innovation Lab for Markets, Risk and Resilience at UC Davis. [Link](https://basis.ucdavis.edu/news/how-earth-obervations-can-help-governments-protect-vulnerable-families-disaster-risk)
+"How Earth Observations Can Help Governments Protect Vulnerable Families from Disaster Risk." BASIS Feed the Future Innovation Lab for Markets, Risk and Resilience at UC Davis. [[Link](https://basis.ucdavis.edu/news/how-earth-obervations-can-help-governments-protect-vulnerable-families-disaster-risk)]
 
