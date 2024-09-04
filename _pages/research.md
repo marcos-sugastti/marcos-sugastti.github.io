@@ -7,7 +7,7 @@ author_profile: true
 
 ## Works in Progress
 
-### The Impact of Natural Disasters on Risk Preferences, Subjective Beliefs, and Related Behavior: Evidence from Typhoon Ketsana (with Sean F. Kiely) [Working Paper | Slides]
+### The Impact of Natural Disasters on Risk Preferences, Subjective Beliefs, and Related Behavior: Evidence from Typhoon Ketsana (with Sean F. Kiely) 
 
 <details>
 <summary>Abstract</summary>
@@ -23,7 +23,7 @@ We study how individuals' risk preferences, subjective beliefs about future shoc
 Multifaceted graduation programs modeled after BRAC’s seminal approach aim to reduce poverty by building up physical productive assets and intangible business and life skills. Research on these programs has shown that they generally result in positive average treatment effects across various economic variables, though these results obscure sizeable heterogeneity. This paper studies the heterogeneous impacts of a graduation program and examines psychological well-being as both an outcome affected by the program and as a source of heterogeneity. We exploit a randomized controlled trial with a staggered rollout and a saturation design of a graduation program implemented by the government of Paraguay. Midline results reveal positive effects of the program on income, assets, but no effects on savings. Impacts vary widely across the distribution of participants, with only the top half of the most benefitted participants experiencing a statistically significant increase in income, and the top quartile most benefitted participant experiencing increases in assets four times the size of those in the bottom quartile, according to conditional quantile treatment estimates. Additionally, we find that the program leads to an increase in the number of respondents who report moderate to severe symptoms of depression. The presence of such symptoms at baseline emerges as a key source of impact heterogeneity, with participants who had more severe initial symptoms seeing no statistically significant increase in income and an increase in assets only half the size of those with fewer initial symptoms. The paper discusses what these findings imply for designing and implementing graduation programs in a cost-effective manner.
 </details>
 
-### The Economics of Sovereign Insurance in Low- and Middle-Income Countries (with Michael R. Carter) [Slides]
+### The Economics of Sovereign Insurance in Low- and Middle-Income Countries (with Michael R. Carter)
 
 <details>
 <summary>Abstract</summary>
