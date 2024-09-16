@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD Candidate in Agricultural and Resource Economics at UC Davis. My fields of interest are development and public economics. I am currently studying questions on social protection, psychological well-being, risk and insurance, and climate resilience in developing countries. I am actively conducting fieldwork in my home country of Paraguay. 
+I am a PhD Candidate in Agricultural and Resource Economics at UC Davis. My fields of interest are development and public economics. I am currently studying questions on psychological well-being, social protection, resilience to shocks including climate change, and risk and insurance in developing countries. I am actively conducting fieldwork in my home country of Paraguay. 
 
 You can find my CV [here](https://www.dropbox.com/scl/fi/hplikq48vlx8b9o2w0jjx/Sugastti_CV_0824.pdf?rlkey=9secnov1pmxq0ej0dnntborm4&st=pv6e9act&dl=0).
 
