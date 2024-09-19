@@ -14,5 +14,3 @@ I am affiliated with the [Feed the Future Innovation Lab for Markets, Risk, and 
 Before entering my doctoral program, I graduated from [Columbia University](https://econ.columbia.edu/) with a BA in Economics-Mathematics and a Concentration in Latin American and Caribbean Studies. I have worked in Asunción as a Policy Analyst at the [Secretariat of Planning for Economic and Social Development](https://www.stp.gov.py/) and as a Research Associate at [Instituto Desarrollo](https://desarrollo.edu.py/en/home/). I am also a long-time collaborator of [OMAPA](https://www.omapa.org/), the Paraguayan mathematical olympiads organization.
 
 You can find my CV [here](https://www.dropbox.com/scl/fi/oqcbo3h6f1nk69ln6b7ka/Sugastti_CV_0924.pdf?rlkey=0j90fx3v1u15sf52qlh02l65y&st=ahjcfdnk&dl=0).
-
-<object data="Sugastti_CV_0924.pdf" width="1000" height="1000" type='application/pdf'/>
