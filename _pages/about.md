@@ -15,4 +15,4 @@ Before entering my doctoral program, I graduated from [Columbia University](http
 
 You can find my CV [here](https://www.dropbox.com/scl/fi/oqcbo3h6f1nk69ln6b7ka/Sugastti_CV_0924.pdf?rlkey=0j90fx3v1u15sf52qlh02l65y&st=ahjcfdnk&dl=0).
 
-[embed]https://www.dropbox.com/scl/fi/oqcbo3h6f1nk69ln6b7ka/Sugastti_CV_0924.pdf?rlkey=0j90fx3v1u15sf52qlh02l65y&st=ahjcfdnk&dl=0[/embed]
+<object data="Sugastti_CV_0924.pdf" width="1000" height="1000" type='application/pdf'/>
