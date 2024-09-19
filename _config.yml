@@ -23,7 +23,7 @@ author:
   # Biographic information
   avatar           : "DSC_0084_3.jpg"
   name             : # "Your Sidebar Name"
-  pronouns         : "he/him"
+  pronouns         : # Pronouns
   bio              : # "Short biography for the left-hand sidebar"
   location         : "Davis, CA/Asunción, Paraguay"
   employer         : # "Red Brick University"
