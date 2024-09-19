@@ -23,9 +23,9 @@ author:
   # Biographic information
   avatar           : "DSC_0084_3.jpg"
   name             : # "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
+  pronouns         : "he/him"
   bio              : # "Short biography for the left-hand sidebar"
-  location         : "Davis, CA / Asunción, Paraguay"
+  location         : "Davis, CA/Asunción, Paraguay"
   employer         : # "Red Brick University"
   uri              : # URL
   email            : "marcosms@ucdavis.edu" 
