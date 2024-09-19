@@ -9,4 +9,4 @@ redirect_from:
 
 You can find my CV below.
   
-<object data="Sugastti_CV_0924.pdf" width="500" height="500" type='application/pdf'/>
+<embed src="https://marcos-sugastti.github.io/Sugastti_CV_0924.pdf" type="application/pdf"/>
