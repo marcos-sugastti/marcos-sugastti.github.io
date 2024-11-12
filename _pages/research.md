@@ -21,7 +21,7 @@ outcomes than those in communities where fewer neighbors receive the program. Th
 
 ## Works in Progress
 
-### The Impact of Natural Disasters on Risk Preferences, Subjective Beliefs, and Related Behavior: Evidence from Typhoon Ketsana (with Sean F. Kiely) [[Slides](https://marcos-sugastti.github.io/The Impact of Natural Disasters.pdf)]
+### The Impact of Natural Disasters on Risk Preferences, Subjective Beliefs, and Related Behavior: Evidence from Typhoon Ketsana (with Sean F. Kiely) [[Slides](https://marcos-sugastti.github.io/The_Impact_of_Natural_Disasters.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -31,7 +31,7 @@ We study how individuals' risk preferences, subjective beliefs about future shoc
 <i>Working paper available upon request.</i>
 </details>
 
-### The Economics of Sovereign Insurance in Low- and Middle-Income Countries (with Michael R. Carter) [[Slides](https://marcos-sugastti.github.io/Economics of Sovereign Insurance.pdf)]
+### The Economics of Sovereign Insurance in Low- and Middle-Income Countries (with Michael R. Carter) [[Slides](https://marcos-sugastti.github.io/Economics_of_Sovereign_Insurance.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -39,7 +39,7 @@ We study how individuals' risk preferences, subjective beliefs about future shoc
 The increased frequency and severity of natural disasters have led to the emergence of new tools for disaster risk finance, including sovereign index insurance contracts that provide governments with budgetary support for infrastructure replacement costs and excess social protection payments that accumulate in the wake of hurricanes and droughts. While multiple factors must be considered when determining whether such contracts are warranted, here we focus on core economic considerations: when does the protection offered by these sovereign contracts make sound public finance sense? To address this question, we propose two conceptual metrics. The first is based on minimizing the economic cost of meeting disaster-induced excess budgetary expenditures. The second focuses on maximizing social welfare within a fixed government budget. We then illustrate the use of these concepts using data from Kenya and analyzing the efficacy of an example parametric sovereign risk contract developed to meet the country’s excess social protection needs resulting from drought events in the rangeland areas. While we stress that the benchmark data available for evaluating the contract are imperfect, we find that the proposed contract outperforms a go-it-alone (no insurance) policy under both metrics, even when we assume commercial mark-up rates on the insurance. We also find that the proposed contract falls well short of what a perfect parametric contract could achieve, highlighting the importance of quality assessment methodologies to compare alternative options. Overall, we propose a methodology for comparing the performance of different sovereign-level parametric insurance contracts and establishing a minimum quality threshold.
 </details>
 
-### Asset Protection and Disaster Risk Financing to Improve Shock-responsive Social Protection in Latin America and the Caribbean (with Michael R. Carter) [[Slides](https://marcos-sugastti.github.io/Shock-responsive SP in LAC.pdf)]
+### Asset Protection and Disaster Risk Financing to Improve Shock-responsive Social Protection in Latin America and the Caribbean (with Michael R. Carter) [[Slides](https://marcos-sugastti.github.io/Shock-responsive_SP_in_LAC.pdf)]
 
 <details>
 <summary>Abstract</summary>
