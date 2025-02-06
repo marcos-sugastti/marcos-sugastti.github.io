@@ -21,11 +21,11 @@ repository               : "marcos-sugastti/marcos-sugastti.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "IMG_5122_4.jpg"
+  avatar           : "IMG_1519.jpg"
   name             : # "Your Sidebar Name"
   pronouns         : # Pronouns
   bio              : # "Short biography for the left-hand sidebar"
-  location         : "Davis, CA/Asunción, Paraguay"
+  location         : "Asunción, Paraguay"
   employer         : # "Red Brick University"
   uri              : # URL
   email            : "marcosms@ucdavis.edu" 
