@@ -12,11 +12,7 @@ author_profile: true
 <details>
 <summary>Abstract</summary>
 <br>
-Asset-building anti-poverty programs that follow BRAC’s graduation approach generally yield positive average treatment effects on economic variables, though these figures obscure
-sizable heterogeneity, and the psychological effects of the programs remain understudied. Leveraging a randomized controlled trial with a staggered rollout and saturation
-design, I examine how and for whom the Paraguayan government’s graduation program works. Midline findings indicate that while the program improves key economic outcomes for most treated households, impacts vary widely across the distribution of participants. I also find that the program worsens the psychological state of beneficiaries mid-program, with measures of depression, locus of control, aspirations, and self-efficacy suggesting that the expectation for program participants to transform their livelihoods may induce stress. A saturation analysis shows that this psychological decline seems to be attenuated in communities with a greater share of beneficiary households, highlighting the role of community
-dynamics in supporting participants. In fact, psychological factors may act as an important source of spillover effects, as beneficiaries in these communities experience better economic
-outcomes than those in communities where fewer neighbors receive the program. The paper discusses what these findings imply for the cost-effective design and implementation of graduation programs.
+Asset-building anti-poverty programs that follow BRAC's graduation approach generally yield positive average treatment effects on economic outcomes. However, these averages often mask substantial heterogeneity, and the psychological effects of such programs remain understudied. Leveraging a randomized controlled trial with a staggered rollout and saturation design, I examine how and for whom the Paraguayan government's graduation program works. Midline findings indicate that while the program improves key economic outcomes for most treated households, impacts vary widely across participants. I also find that the program worsens the psychological states of beneficiaries at midline, with measures of depression, locus of control, aspirations, and self-efficacy suggesting that the expectation for program participants to transform their livelihoods may induce stress. A saturation analysis reveals that this psychological decline seems to be attenuated in communities with a higher share of beneficiary households, highlighting the importance of community dynamics in supporting participants. Psychological factors may act as an important source of spillover effects, as beneficiaries in higher-saturation communities experience better economic outcomes than those in communities where fewer neighbors receive the program. The paper discusses what these findings imply for the cost-effective design and implementation of graduation programs.
 </details>
 
 ### The Economics of Sovereign Insurance in Low- and Middle-Income Countries (with Michael R. Carter)
@@ -39,7 +35,7 @@ We study how individuals' risk preferences, subjective beliefs about future shoc
 <i>Working paper available upon request.</i>
 </details>
 
-### Asset Protection and Disaster Risk Financing to Improve Shock-responsive Social Protection in Latin America and the Caribbean (with Michael R. Carter)
+### Asset Protection and Disaster Risk Financing to Improve Shock-Responsive Social Protection in Latin America and the Caribbean (with Michael R. Carter)
 
 <details>
 <summary>Abstract</summary>
