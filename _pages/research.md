@@ -47,7 +47,11 @@ In Latin America and the Caribbean (LAC), the poorest and most vulnerable househ
 <i>Working paper available upon request.</i>
 </details>
 
+## Other Reports
+
+[["Evaluating the Case for National Disaster Risk Insurance"](https://basis.ucdavis.edu/sites/g/files/dgvnsk466/files/2021-10/MRR%20Evidence%20Insight%202021-08%20-%20Evaluating%20Disaster%20Risk%20Insurance%20FINAL.pdf)] (with Michael R. Carter, Francesco Fava, and Nathaniel Jensen). MRR Innovation Lab Evidence Insight.
+
 ## Blog Coverage
 
-"How Earth Observations Can Help Governments Protect Vulnerable Families from Disaster Risk." BASIS Feed the Future Innovation Lab for Markets, Risk and Resilience at UC Davis. [[Link](https://basis.ucdavis.edu/news/how-earth-observations-can-help-governments-protect-vulnerable-families-disaster-risk)]
+[["How Earth Observations Can Help Governments Protect Vulnerable Families from Disaster Risk."](https://basis.ucdavis.edu/news/how-earth-observations-can-help-governments-protect-vulnerable-families-disaster-risk)] BASIS Feed the Future Innovation Lab for Markets, Risk and Resilience at UC Davis. 
 
