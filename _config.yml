@@ -12,7 +12,7 @@ title                    : "Marcos M. Sugastti"
 title_separator          : "-"
 name                     : &name "Marcos Martínez Sugastti"
 description              : &description "personal description"
-url                      : https://marcos-sugastti.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://marcosms.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "marcos-sugastti/marcos-sugastti.github.io"
 
