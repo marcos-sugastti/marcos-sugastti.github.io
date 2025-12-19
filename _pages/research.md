@@ -52,7 +52,7 @@ In Latin America and the Caribbean (LAC), the poorest and most vulnerable househ
 #### Reducing Conflict Incentives Through Insurance and Paid Apprenticeships (upcoming RCT)
 #### Seasonal Incentives and the Structure of Pastoral Conflict
 #### Behavioral Preferences and Drought Preparedness
-#### Weather Risk, Insurance, and Psychological Well-being
+#### Weather Risk, Insurance, and Psychological Well-Being
 
 ## Other Reports
 
