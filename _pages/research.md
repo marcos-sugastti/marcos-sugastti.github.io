@@ -47,12 +47,17 @@ In Latin America and the Caribbean (LAC), the poorest and most vulnerable househ
 
 ## Works in Progress
 
-#### Evaluating the DRIVE Program in the Horn of Africa (ongoing RCT)
-#### Improving the Value of Early Warning Weather Forecasts for Pastoralists (upcoming RCT)
-#### Reducing Conflict Incentives Through Insurance and Paid Apprenticeships (upcoming RCT)
-#### Seasonal Incentives and the Structure of Pastoral Conflict
-#### Behavioral Preferences and Drought Preparedness
-#### Weather Risk, Insurance, and Psychological Well-Being
+Evaluating the DRIVE Program in the Horn of Africa (ongoing RCT)
+
+Improving the Value of Early Warning Weather Forecasts for Pastoralists (upcoming RCT)
+
+Reducing Conflict Incentives Through Insurance and Paid Apprenticeships (upcoming RCT)
+
+Seasonal Incentives and the Structure of Pastoral Conflict
+
+Behavioral Preferences and Drought Preparedness
+
+Weather Risk, Insurance, and Psychological Well-Being
 
 ## Other Reports
 
