@@ -45,6 +45,15 @@ In Latin America and the Caribbean (LAC), the poorest and most vulnerable househ
 <i>Working paper available upon request.</i>
 </details>
 
+## Works in Progress
+
+Evaluating the DRIVE Program in the Horn of Africa (ongoing RCT)
+Improving the Value of Early Warning Weather Forecasts for Pastoralists (upcoming RCT)
+Reducing Conflict Incentives Through Insurance and Paid Apprenticeships (upcoming RCT)
+Seasonal Incentives and the Structure of Pastoral Conflict
+Behavioral Preferences and Drought Preparedness
+Weather Risk, Insurance, and Psychological Well-being
+
 ## Other Reports
 
 ["Evaluating the Case for National Disaster Risk Insurance"](https://basis.ucdavis.edu/sites/g/files/dgvnsk466/files/2021-10/MRR%20Evidence%20Insight%202021-08%20-%20Evaluating%20Disaster%20Risk%20Insurance%20FINAL.pdf) (with Michael R. Carter, Francesco Fava, and Nathaniel Jensen). MRR Innovation Lab Evidence Insight.
