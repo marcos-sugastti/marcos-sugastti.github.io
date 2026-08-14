@@ -13,6 +13,7 @@ author_profile: true
 <summary>Abstract</summary>
 <br>
 Asset-building anti-poverty programs that follow BRAC's graduation approach generally yield positive average treatment effects on economic outcomes. However, these averages often mask substantial heterogeneity, and the psychological effects of such programs remain understudied. Leveraging a randomized controlled trial with a staggered rollout and saturation design, I examine how and for whom the Paraguayan government's graduation program works. Midline findings indicate that while the program improves key economic outcomes for most treated households, impacts vary widely across participants. I also find that the program worsens the psychological states of beneficiaries at midline, with measures of depression, locus of control, aspirations, and self-efficacy suggesting that the expectation for program participants to transform their livelihoods may induce stress. A saturation analysis reveals that this psychological decline seems to be attenuated in communities with a higher share of beneficiary households, highlighting the importance of community dynamics in supporting participants. Psychological factors may act as an important source of spillover effects, as beneficiaries in higher-saturation communities experience better economic outcomes than those in communities where fewer neighbors receive the program. The paper discusses what these findings imply for the cost-effective design and implementation of graduation programs.
+<br>
 <i>Working paper available upon request.</i>
 </details>
 
@@ -48,7 +49,7 @@ In Latin America and the Caribbean (LAC), the poorest and most vulnerable househ
 
 ## Works in Progress
 
-Impact Evaluation of Take-Up of an Insurance-Based Financial Package for Drought Risk Mitigation among Pastoral Households (with Karlijn Morsink, Nathaniel Jensen, Kelvin Shikuku, Tagel Gebrehiwot,  Hyuk Harry Son, and Anouk van Veldhoven) [(ongoing RCT)](https://www.socialscienceregistry.org/trials/18945)
+Impact Evaluation of Take-Up of an Insurance-Based Financial Package for Drought Risk Mitigation among Pastoral Households (with Karlijn Morsink, Nathaniel Jensen, Kelvin Shikuku, Tagel Gebrehiwot,  Hyuk Harry Son, and Anouk van Veldhoven) ([ongoing RCT](https://www.socialscienceregistry.org/trials/18945))
 
 Reducing Conflict Incentives Through Insurance, Paid Apprenticeships, and Psychological Support (with Karlijn Morsink, Kelvin Shikuku, Emmy Auma, Tagel Gebrehiwot, Nathaniel Jensen, Chris Barrett, Erwin Bulte, Emma Rikken, and Yuma Noritomo) (upcoming RCT)
 
@@ -59,7 +60,9 @@ Weather Risk, Index Insurance, and Psychological Well-Being
 ## Other Reports
 
 ["Weather and climate information for pastoralists: Opportunities and pathways"](https://cgspace.cgiar.org/items/b14ecf5a-717b-4f5c-a2b8-c2505ce782d5) (with Claire Bedelian, Nelly Bosibori Nyamweya, Robert Muiruri, and Lilian Kirwa). Jameel Observatory Policy Brief.
+
 ["Behavioural considerations for effective early and anticipatory action"](https://cgspace.cgiar.org/items/61dbeac4-60bc-43a4-8482-f5c28d563803) (with Susan Njambi-Szlapka, Wendy Chamberlin, and Claire Bedelian). Jameel Observatory Policy Brief.
+
 ["Evaluating the Case for National Disaster Risk Insurance"](https://basis.ucdavis.edu/sites/g/files/dgvnsk466/files/2021-10/MRR%20Evidence%20Insight%202021-08%20-%20Evaluating%20Disaster%20Risk%20Insurance%20FINAL.pdf) (with Michael R. Carter, Francesco Fava, and Nathaniel Jensen). MRR Innovation Lab Evidence Insight.
 
 ## Blog Coverage
