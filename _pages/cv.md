@@ -9,4 +9,4 @@ redirect_from:
 
 You can [download my CV here](https://marcos-sugastti.github.io/Sugastti_CV_1026.pdf). 
   
-<embed src="https://marcos-sugastti.github.io/Sugastti_CV_0826.pdf#toolbar=0" width="390" height="500" type="application/pdf"/>
+<embed src="https://marcos-sugastti.github.io/Sugastti_CV_1026.pdf#toolbar=0" width="390" height="500" type="application/pdf"/>
