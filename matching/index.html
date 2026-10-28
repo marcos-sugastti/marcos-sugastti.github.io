@@ -110,6 +110,13 @@ dialog textarea{width:100%;font-family:var(--mono);font-size:.85rem;margin-top:1
 dialog code{font-family:var(--mono);font-size:.85em;background:var(--field);padding:1px 4px;border-radius:4px}
 .row-end{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
 .err{color:var(--bad);font-size:.88rem;margin-top:6px;white-space:pre-line}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
+@media (max-width:720px){.fields{grid-template-columns:1fr}}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px}
+.field input{width:100%;font-size:1rem;padding:8px 11px}
+.field input.invalid{border-color:var(--bad);background:var(--bad-soft)}
+.field .err{min-height:1.3em;margin-top:4px}
+.req{color:var(--bad)}
 </style>
 </head>
 <body>
@@ -121,14 +128,31 @@ dialog code{font-family:var(--mono);font-size:.85em;background:var(--field);padd
     <p class="sub">Gale–Shapley deferred acceptance · one or more slots per mentor</p>
   </div>
   <div class="top-actions">
+    <button id="dlXlsxTop" class="primary" type="button">Download all data (Excel)</button>
     <button id="saveJson" type="button">Save setup</button>
     <label class="btn">Load setup<input type="file" id="loadJson" accept=".json,application/json" hidden></label>
     <button id="resetEx" type="button">Reset to example</button>
   </div>
 </header>
 
+<section class="card" id="sessionCard">
+  <h2><span class="step">1</span>Session</h2>
+  <div class="fields">
+    <div class="field">
+      <label for="agentName">Agent name <span class="req">*</span></label>
+      <input type="text" id="agentName" autocomplete="off" placeholder="Person entering the data">
+      <div class="err" id="agentErr" aria-live="polite"></div>
+    </div>
+    <div class="field">
+      <label for="communityId">Community ID <span class="req">*</span></label>
+      <input type="text" id="communityId" inputmode="numeric" maxlength="3" pattern="[0-9]{3}" autocomplete="off" placeholder="3 digits, e.g. 042">
+      <div class="err" id="commErr" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
 <section class="card">
-  <h2><span class="step">1</span>Participants</h2>
+  <h2><span class="step">2</span>Participants</h2>
   <div class="two">
     <div>
       <div class="colhead"><h3><span class="dot a"></span>Apprentices</h3><button id="addA" class="small" type="button">+ Add apprentice</button></div>
@@ -143,7 +167,7 @@ dialog code{font-family:var(--mono);font-size:.85em;background:var(--field);padd
 </section>
 
 <section class="card">
-  <h2><span class="step">2</span>Preferences</h2>
+  <h2><span class="step">3</span>Preferences</h2>
   <p class="hint" style="margin-top:0">Type each person’s ranking, <b>1 = most preferred</b>. Leave a cell blank if that person is unacceptable to them — the two will never be matched.</p>
 
   <div class="pref-block">
@@ -174,7 +198,7 @@ dialog code{font-family:var(--mono);font-size:.85em;background:var(--field);padd
 </section>
 
 <section class="card">
-  <h2><span class="step">3</span>Matching</h2>
+  <h2><span class="step">4</span>Matching</h2>
   <div class="seg" role="radiogroup" aria-label="Proposing side">
     <span class="seg-label">Who proposes?</span>
     <label><input type="radio" name="prop" value="a"> Apprentices</label>
@@ -300,6 +324,87 @@ function solve(S, proposer){
   return {proposer:proposer, aMatch:aMatch, mMatch:mMatch, rounds:r.rounds, exhausted:r.exhausted,
           blocking:blockingPairs(aMatch,mMatch,aPos,mPos,cap), aPos:aPos, mPos:mPos, cap:cap};
 }
+
+/* ---------- Minimal XLSX writer (no dependencies) ----------
+   sheets = [{name, rows:[[cell,...],...]}]; first row is bold + frozen.
+   Numbers are written as numbers, everything else as text (keeps leading zeros). */
+var CRC_TABLE=(function(){var t=new Uint32Array(256);for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);t[n]=c>>>0;}return t;})();
+function crc32(b){var c=0xFFFFFFFF;for(var i=0;i<b.length;i++)c=CRC_TABLE[(c^b[i])&0xFF]^(c>>>8);return (c^0xFFFFFFFF)>>>0;}
+function zipStore(files){
+  var parts=[], central=[], offset=0, d=new Date();
+  var time=(d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1);
+  var date=((d.getFullYear()-1980)<<9)|((d.getMonth()+1)<<5)|d.getDate();
+  var enc=new TextEncoder();
+  files.forEach(function(f){
+    var nm=enc.encode(f.name), data=f.data, crc=crc32(data);
+    var h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true); h.setUint16(4,20,true); h.setUint16(6,0x0800,true); h.setUint16(8,0,true);
+    h.setUint16(10,time,true); h.setUint16(12,date,true); h.setUint32(14,crc,true);
+    h.setUint32(18,data.length,true); h.setUint32(22,data.length,true); h.setUint16(26,nm.length,true); h.setUint16(28,0,true);
+    parts.push(new Uint8Array(h.buffer), nm, data);
+    var c=new DataView(new ArrayBuffer(46));
+    c.setUint32(0,0x02014b50,true); c.setUint16(4,20,true); c.setUint16(6,20,true); c.setUint16(8,0x0800,true); c.setUint16(10,0,true);
+    c.setUint16(12,time,true); c.setUint16(14,date,true); c.setUint32(16,crc,true);
+    c.setUint32(20,data.length,true); c.setUint32(24,data.length,true); c.setUint16(28,nm.length,true);
+    c.setUint16(30,0,true); c.setUint16(32,0,true); c.setUint16(34,0,true); c.setUint16(36,0,true); c.setUint32(38,0,true); c.setUint32(42,offset,true);
+    central.push(new Uint8Array(c.buffer), nm);
+    offset+=30+nm.length+data.length;
+  });
+  var cdSize=central.reduce(function(s,a){return s+a.length;},0);
+  var e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true); e.setUint16(4,0,true); e.setUint16(6,0,true);
+  e.setUint16(8,files.length,true); e.setUint16(10,files.length,true); e.setUint32(12,cdSize,true); e.setUint32(16,offset,true); e.setUint16(20,0,true);
+  var all=parts.concat(central,[new Uint8Array(e.buffer)]);
+  var out=new Uint8Array(all.reduce(function(s,a){return s+a.length;},0)), pos=0;
+  all.forEach(function(a){out.set(a,pos); pos+=a.length;});
+  return out;
+}
+function xmlEsc(s){return String(s).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function colName(n){var s='';n++;while(n>0){var m=(n-1)%26;s=String.fromCharCode(65+m)+s;n=Math.floor((n-1)/26);}return s;}
+function sheetXml(rows){
+  var ncol=rows.reduce(function(m,r){return Math.max(m,r.length);},0), widths=[];
+  for(var c=0;c<ncol;c++){ var mx=8; rows.forEach(function(r){ if(r[c]!=null) mx=Math.max(mx,String(r[c]).length+2); }); widths.push(Math.min(mx,60)); }
+  var x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'+
+    '<sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>';
+  if(ncol) x+='<cols>'+widths.map(function(w,c){return '<col min="'+(c+1)+'" max="'+(c+1)+'" width="'+w+'" customWidth="1"/>';}).join('')+'</cols>';
+  x+='<sheetData>';
+  rows.forEach(function(r,ri){
+    x+='<row r="'+(ri+1)+'">';
+    r.forEach(function(v,ci){
+      if(v===null||v===undefined||v==='') return;
+      var ref=colName(ci)+(ri+1), s=ri===0?' s="1"':'';
+      if(typeof v==='number'&&isFinite(v)) x+='<c r="'+ref+'"'+s+'><v>'+v+'</v></c>';
+      else x+='<c r="'+ref+'"'+s+' t="inlineStr"><is><t xml:space="preserve">'+xmlEsc(v)+'</t></is></c>';
+    });
+    x+='</row>';
+  });
+  return x+'</sheetData></worksheet>';
+}
+function buildXlsx(sheets){
+  var NS='http://schemas.openxmlformats.org/', H='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n';
+  var STYLES='<styleSheet xmlns="'+NS+'spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font></fonts>'+
+    '<fills count="2"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill></fills>'+
+    '<borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders>'+
+    '<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>'+
+    '<cellXfs count="2"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs>'+
+    '<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>';
+  var files=[
+    ['[Content_Types].xml', H+'<Types xmlns="'+NS+'package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/>'+
+      '<Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/>'+
+      '<Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>'+
+      sheets.map(function(_,i){return '<Override PartName="/xl/worksheets/sheet'+(i+1)+'.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>';}).join('')+'</Types>'],
+    ['_rels/.rels', H+'<Relationships xmlns="'+NS+'package/2006/relationships"><Relationship Id="rId1" Type="'+NS+'officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'],
+    ['xl/workbook.xml', H+'<workbook xmlns="'+NS+'spreadsheetml/2006/main" xmlns:r="'+NS+'officeDocument/2006/relationships"><sheets>'+
+      sheets.map(function(s,i){return '<sheet name="'+xmlEsc(s.name)+'" sheetId="'+(i+1)+'" r:id="rId'+(i+1)+'"/>';}).join('')+'</sheets></workbook>'],
+    ['xl/_rels/workbook.xml.rels', H+'<Relationships xmlns="'+NS+'package/2006/relationships">'+
+      sheets.map(function(_,i){return '<Relationship Id="rId'+(i+1)+'" Type="'+NS+'officeDocument/2006/relationships/worksheet" Target="worksheets/sheet'+(i+1)+'.xml"/>';}).join('')+
+      '<Relationship Id="rId'+(sheets.length+1)+'" Type="'+NS+'officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'],
+    ['xl/styles.xml', H+STYLES]
+  ];
+  sheets.forEach(function(s,i){ files.push(['xl/worksheets/sheet'+(i+1)+'.xml', sheetXml(s.rows)]); });
+  var enc=new TextEncoder();
+  return zipStore(files.map(function(f){return {name:f[0], data:enc.encode(f[1])};}));
+}
 </script>
 
 <!-- Interface -->
@@ -307,6 +412,7 @@ function solve(S, proposer){
 (function(){
 var LS_KEY='da-mentor-apprentice-v1';
 var EXAMPLE={
+  agent:'', community:'',
   proposer:'a',
   aNames:['Apprentice 1','Apprentice 2','Apprentice 3','Apprentice 4','Apprentice 5'],
   mNames:['Mentor 1','Mentor 2','Mentor 3','Mentor 4','Mentor 5'],
@@ -335,6 +441,8 @@ function validState(o){
 function normalize(o){
   var clean=function(v){ if(v===null||v===undefined||v==='') return null; var n=Number(v); return Number.isFinite(n)&&String(v).trim()!==''?n:String(v); };
   return {
+    agent:o.agent==null?'':String(o.agent),
+    community:o.community==null?'':String(o.community).replace(/\D/g,'').slice(0,3),
     proposer:o.proposer==='m'?'m':'a',
     aNames:o.aNames.map(String), mNames:o.mNames.map(String),
     cap:o.cap.map(function(c){var v=parseInt(c,10);return v>=1?v:1;}),
@@ -499,26 +607,139 @@ function renderResults(v){
       diff.map(function(i){return '<li>'+plainA(i)+': '+plainM(resA.aMatch[i])+' (apprentices propose) vs '+plainM(resM.aMatch[i])+' (mentors propose)</li>';}).join('')+'</ul></div>';
   }
 
-  h+='<div class="actions"><button type="button" class="primary" id="dlCsv">Download matching (CSV)</button><button type="button" id="dlBoth">Download both orders (CSV)</button></div>';
+  h+='<div class="actions"><button type="button" class="primary" id="dlXlsx">Download all data (Excel)</button><button type="button" id="dlCsv">Matching only (CSV)</button></div>';
   h+='<details><summary>Step-by-step log ('+(res.proposer==='a'?'apprentices':'mentors')+' propose)</summary>'+logHTML(res)+'</details>';
   box.innerHTML=h;
-  $('#dlCsv').onclick=function(){ download('matching_'+(res.proposer==='a'?'apprentice':'mentor')+'_proposing.csv', matchCsv([res]), 'text/csv'); };
-  $('#dlBoth').onclick=function(){ download('matching_both_orders.csv', matchCsv([resA,resM]), 'text/csv'); };
+  $('#dlXlsx').onclick=downloadXlsx;
+  $('#dlCsv').onclick=function(){
+    if(!requireSession()) return;
+    var rows=matchRows([res]);
+    download(fileBase()+'_matching_'+(res.proposer==='a'?'apprentice':'mentor')+'_proposing.csv', rows.map(function(r){return r.map(q).join(',');}).join('\n')+'\n', 'text/csv');
+  };
 }
 
 function q(s){ s=String(s); return /[",\n\r]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s; }
-function matchCsv(list){
-  var lines=['proposing_side,apprentice_id,apprentice,mentor_id,mentor,apprentice_rank_of_mentor,mentor_rank_of_apprentice'];
+function matchRows(list, selected){
+  var agent=S.agent.trim(), comm=S.community;
+  var head=['community_id','agent_name','proposing_side'];
+  if(selected) head.push('selected_in_app');
+  head=head.concat(['apprentice_id','apprentice','mentor_id','mentor','apprentice_rank_of_mentor','mentor_rank_of_apprentice']);
+  var rows=[head];
   list.forEach(function(res){
     res.aMatch.forEach(function(j,i){
-      lines.push([res.proposer==='a'?'apprentices':'mentors', code('a',i), dn('a',i), j<0?'':code('m',j), j<0?'':dn('m',j),
-        j<0?'':res.aPos[i][j]+1, j<0?'':res.mPos[j][i]+1].map(q).join(','));
+      var r=[comm, agent, res.proposer==='a'?'apprentices':'mentors'];
+      if(selected) r.push(res.proposer===S.proposer?1:0);
+      rows.push(r.concat([code('a',i), dn('a',i), j<0?'':code('m',j), j<0?'':dn('m',j),
+        j<0?'':res.aPos[i][j]+1, j<0?'':res.mPos[j][i]+1]));
     });
   });
-  return lines.join('\n')+'\n';
+  return rows;
 }
-function download(name,text,type){
-  var b=new Blob([text],{type:type}); var u=URL.createObjectURL(b);
+
+/* ---------- Session fields ---------- */
+var touched={agent:false, community:false};
+function setErr(inp,box,msg){ inp.classList.toggle('invalid',!!msg); box.textContent=msg; }
+function sessionCheck(force){
+  if(force){ touched.agent=true; touched.community=true; }
+  var a=(S.agent||'').trim(), c=S.community||'';
+  var aErr=a?'':'Enter the agent name.';
+  var cErr=/^[0-9]{3}$/.test(c)?'':(c?'Community ID must be exactly 3 digits.':'Enter the 3-digit community ID.');
+  setErr($('#agentName'),$('#agentErr'), touched.agent?aErr:'');
+  setErr($('#communityId'),$('#commErr'), (touched.community||c.length>=3)?cErr:'');
+  return !aErr && !cErr;
+}
+function requireSession(){
+  if(sessionCheck(true)) return true;
+  $('#sessionCard').scrollIntoView({behavior:'smooth',block:'start'});
+  var first=$('#agentName').classList.contains('invalid')?$('#agentName'):$('#communityId');
+  setTimeout(function(){ first.focus({preventScroll:true}); },300);
+  return false;
+}
+$('#agentName').addEventListener('input',function(e){ S.agent=e.target.value; save(); if(touched.agent) sessionCheck(); });
+$('#agentName').addEventListener('blur',function(){ touched.agent=true; sessionCheck(); });
+$('#communityId').addEventListener('input',function(e){
+  var v=e.target.value.replace(/\D/g,'').slice(0,3);
+  if(v!==e.target.value) e.target.value=v;
+  S.community=v; save(); sessionCheck();
+});
+$('#communityId').addEventListener('blur',function(){ touched.community=true; sessionCheck(); });
+
+/* ---------- All-data export ---------- */
+function stamp(){
+  var d=new Date(), p=function(n){return String(n).padStart(2,'0');};
+  var off=-d.getTimezoneOffset(), sg=off>=0?'+':'-'; off=Math.abs(off);
+  return {
+    text:d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())+' (UTC'+sg+p(Math.floor(off/60))+':'+p(off%60)+')',
+    file:''+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+'_'+p(d.getHours())+p(d.getMinutes())
+  };
+}
+function fileBase(){
+  var slug=S.agent.trim().replace(/[^A-Za-z0-9]+/g,'_').replace(/^_+|_+$/g,'').slice(0,30)||'agent';
+  return 'matching_C'+S.community+'_'+slug+'_'+stamp().file;
+}
+function prefLong(side){
+  var other=side==='a'?'m':'a', P=side==='a'?S.aPref:S.mPref;
+  var who=side==='a'?'apprentice':'mentor', whom=side==='a'?'mentor':'apprentice';
+  var agent=S.agent.trim(), comm=S.community;
+  var rows=[['community_id','agent_name',who+'_id',who,whom+'_id',whom,'rank','rank_entered','acceptable','row_valid']];
+  P.forEach(function(row,i){
+    var pos=positions(order(row),row.length), valid=rowBad(row).size?0:1;
+    row.forEach(function(raw,j){
+      rows.push([comm,agent,code(side,i),dn(side,i),code(other,j),dn(other,j),
+        (!valid||pos[j]===Infinity)?'':pos[j]+1, raw===null?'':raw, pos[j]===Infinity?0:1, valid]);
+    });
+  });
+  return rows;
+}
+function prefWide(side){
+  var other=side==='a'?'m':'a', P=side==='a'?S.aPref:S.mPref, n=side==='a'?S.mNames.length:S.aNames.length;
+  var who=side==='a'?'apprentice':'mentor';
+  var agent=S.agent.trim(), comm=S.community;
+  var head=['community_id','agent_name',who+'_id',who];
+  for(var j=0;j<n;j++) head.push('rank_'+code(other,j));
+  head.push('n_ranked','ranked_order','row_valid');
+  var rows=[head];
+  P.forEach(function(row,i){
+    var o=order(row), valid=rowBad(row).size?0:1;
+    rows.push([comm,agent,code(side,i),dn(side,i)].concat(row.map(function(v){return v===null?'':v;}),
+      [o.length, valid?o.map(function(j){return dn(other,j);}).join(' > '):'', valid]));
+  });
+  return rows;
+}
+function workbookSheets(){
+  var v=validate(), ok=!v.errors.length;
+  var resA=ok?solve(S,'a'):null, resM=ok?solve(S,'m'):null;
+  var agent=S.agent.trim(), comm=S.community;
+  var slots=S.cap.reduce(function(s,c){return s+(parseInt(c,10)>=1?parseInt(c,10):1);},0);
+  var unique=ok?(resA.aMatch.every(function(j,i){return j===resM.aMatch[i];})?'yes':'no'):'';
+  var info=[['field','value'],
+    ['agent_name',agent],['community_id',comm],['exported_at',stamp().text],
+    ['proposing_side_selected',S.proposer==='a'?'apprentices':'mentors'],
+    ['n_apprentices',S.aNames.length],['n_mentors',S.mNames.length],['total_mentor_slots',slots],
+    ['rankings_valid',ok?'yes':'no'],['unique_stable_matching',unique],
+    ['note',ok?'':'Matching not computed because some rankings have repeated or invalid values (see row_valid in the preference sheets).']];
+  var people=[['community_id','agent_name','side','id','name','slots','n_ranked']];
+  S.aNames.forEach(function(_,i){ people.push([comm,agent,'apprentice',code('a',i),dn('a',i),'',order(S.aPref[i]).length]); });
+  S.mNames.forEach(function(_,j){ people.push([comm,agent,'mentor',code('m',j),dn('m',j),parseInt(S.cap[j],10)||1,order(S.mPref[j]).length]); });
+  var match=ok?matchRows([resA,resM],true):[['community_id','agent_name','note'],[comm,agent,'Not computed: some rankings are repeated or invalid.']];
+  return [
+    {name:'Info', rows:info},
+    {name:'Participants', rows:people},
+    {name:'Apprentice_prefs_long', rows:prefLong('a')},
+    {name:'Mentor_prefs_long', rows:prefLong('m')},
+    {name:'Apprentice_prefs_wide', rows:prefWide('a')},
+    {name:'Mentor_prefs_wide', rows:prefWide('m')},
+    {name:'Matching', rows:match}
+  ];
+}
+function downloadXlsx(){
+  if(!requireSession()) return;
+  download(fileBase()+'.xlsx', buildXlsx(workbookSheets()), 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+}
+$('#dlXlsxTop').onclick=downloadXlsx;
+
+function download(name,data,type){
+  var b=new Blob([data],{type:type}); var u=URL.createObjectURL(b);
   var a=document.createElement('a'); a.href=u; a.download=name; document.body.appendChild(a); a.click(); a.remove();
   setTimeout(function(){URL.revokeObjectURL(u);},1000);
 }
@@ -531,6 +752,7 @@ function renderIssues(v){
 }
 function refresh(){ var v=validate(); renderIssues(v); renderResults(v); }
 function renderAll(){
+  $('#agentName').value=S.agent||''; $('#communityId').value=S.community||''; sessionCheck();
   renderPeople(); renderMatrices();
   document.querySelectorAll('input[name=prop]').forEach(function(r){ r.checked=(r.value===S.proposer); });
   refresh();
@@ -654,13 +876,22 @@ $('#loadJson').addEventListener('change',function(e){
   var f=e.target.files[0]; if(!f) return;
   var rd=new FileReader();
   rd.onload=function(){
-    try{ var o=JSON.parse(rd.result); if(!validState(o)) throw new Error('bad'); S=normalize(o); save(); renderAll(); }
+    try{
+      var o=JSON.parse(rd.result); if(!validState(o)) throw new Error('bad');
+      var cur={agent:S.agent, community:S.community};
+      S=normalize(o); if(!S.agent) S.agent=cur.agent; if(!S.community) S.community=cur.community;
+      save(); renderAll();
+    }
     catch(err){ alert('That file is not a valid matching setup.'); }
     e.target.value='';
   };
   rd.readAsText(f);
 });
-$('#resetEx').onclick=function(){ if(confirm('Replace the current setup with the 5×5 example?')){ S=clone(EXAMPLE); save(); renderAll(); } };
+$('#resetEx').onclick=function(){
+  if(confirm('Replace the participants and rankings with the 5×5 example? Agent name and community ID are kept.')){
+    var cur={agent:S.agent, community:S.community}; S=clone(EXAMPLE); S.agent=cur.agent; S.community=cur.community; save(); renderAll();
+  }
+};
 
 S=load();
 renderAll();
@@ -668,4 +899,3 @@ renderAll();
 </script>
 </body>
 </html>
-
